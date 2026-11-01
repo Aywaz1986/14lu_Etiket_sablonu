@@ -1,5 +1,5 @@
 // Uygulama sürümü: yalnızca burada değiştirilir (build.py dosya adını buradan alır)
-const APP_SURUM = '1.0.0';
+const APP_SURUM = '1.1.0';
 
 // ═══════════════════════════════════════════
 // IndexedDB KURULUM

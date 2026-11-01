@@ -87,7 +87,7 @@ function f_yaziRengiHexDegisti(id, value) {
 function srAdim(i, delta) {
   var kutu = document.getElementById('sr-kutu-' + i);
   var slider = document.getElementById('sr-slider-' + i);
-  var v = parseFloat(kutu.value) || 37.9;
+  var v = parseFloat(kutu.value) || 38.1;
   v = Math.round((v + delta) * 100) / 100;
   if (v < 30 || v > 45) return;
   kutu.value = v.toFixed(2);
@@ -99,10 +99,10 @@ function satirGuncelle() {
   var rows = [];
   for (var i = 1; i <= 7; i++) {
     var v = parseFloat(document.getElementById('sr-kutu-' + i).value);
-    rows.push((isNaN(v) ? 37.9 : v).toFixed(2) + 'mm');
+    rows.push((isNaN(v) ? 38.1 : v).toFixed(2) + 'mm');
   }
   var gridRows = rows.join(' ');
-  var toplamY = rows.reduce(function(t,v){return t+parseFloat(v);},0) + 4.7*2;
+  var toplamY = rows.reduce(function(t,v){return t+parseFloat(v);},0) + 15.19;
 
   // Ekran CSS
   var styleEl = document.getElementById('satir-css');

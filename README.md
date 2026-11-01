@@ -50,4 +50,4 @@ Ayrıntı: [docs/MIMARI.md](docs/MIMARI.md), [docs/ARAYUZ.md](docs/ARAYUZ.md), [
 
 ## Bilinen notlar
 - CSV içe aktarımında Türkçe karakterler için dosya UTF-8 **BOM'lu** olmalı (Excel'den "CSV UTF-8" kaydı uygundur) veya .xlsx kullanılmalı.
-- Baskı sütun boşluğu şu an 1.27 mm'dir (`01`/`06` CSS); 2.5 mm istenirse tek değişiklikle iki yerde güncellenir.
+- Baskı ölçüleri üreticinin Word şablonundandır: üst 15.19, sol 4.50, sütun 99.12, boşluk 2.70, satır 38.10 mm. Edge: Kenar boşlukları **Yok**, Ölçek **%100**, Kâğıt A4.

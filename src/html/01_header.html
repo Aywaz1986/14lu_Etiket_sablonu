@@ -1,0 +1,13 @@
+<!-- HEADER -->
+<div class="header">
+  <h1>🏷️ 14'lü Etiket Şablonu</h1>
+  <div class="header-actions">
+    <button class="btn btn-outline" onclick="resetAll()">🔄 Sıfırla</button>
+    <button class="btn btn-outline" onclick="ornekSablonIndir()">⬇️ Örnek Excel İndir</button>
+    <button class="btn btn-outline" onclick="document.getElementById('excel-file-input').click()">📊 Excel'den Yükle</button>
+    <input type="file" id="excel-file-input" accept=".xlsx,.xls,.csv" style="display:none" onchange="excelDosyaSecildi(event)">
+    <button class="btn btn-outline" onclick="saveData()">💾 Kaydet</button>
+    <button class="btn btn-primary" onclick="window.print()">🖨️ Yazdır</button>
+  </div>
+</div>
+

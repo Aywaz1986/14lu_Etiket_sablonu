@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>14'lü Etiket Şablonu</title>
+
+<style>
+{{INCLUDE:vendor/fontlar.css}}
+{{INCLUDE:css/01_degiskenler.css}}
+{{INCLUDE:css/02_header_layout.css}}
+{{INCLUDE:css/03_yan_panel.css}}
+{{INCLUDE:css/04_ana_alan_a4.css}}
+{{INCLUDE:css/05_etiket.css}}
+{{INCLUDE:css/06_baski.css}}
+{{INCLUDE:css/07_renk_temalari.css}}
+</style>
+</head>
+<body>
+
+{{INCLUDE:html/01_header.html}}
+{{INCLUDE:html/02_yan_panel.html}}
+{{INCLUDE:html/03_ana_alan.html}}
+<script>
+{{INCLUDE:js/01_sabitler_db.js}}
+{{INCLUDE:js/02_render.js}}
+{{INCLUDE:js/03_sablon_yonetimi.js}}
+{{INCLUDE:js/04_etiket_islemleri.js}}
+{{INCLUDE:js/05_kaydet_toast_yardimci.js}}
+{{INCLUDE:js/06_ornek_sablon.js}}
+{{INCLUDE:js/07_excel_aktarma.js}}
+{{INCLUDE:js/08_baslat.js}}
+</script>
+{{INCLUDE:html/04_excel_modal.html}}
+<script>/*! xlsx.js (C) 2013-present SheetJS -- http://sheetjs.com */
+{{INCLUDE:vendor/xlsx.js}}
+</script>
+</body>
+</html>

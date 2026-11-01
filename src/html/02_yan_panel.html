@@ -1,0 +1,173 @@
+<div class="workspace">
+
+  <!-- SOL PANEL -->
+  <div class="side-panel">
+
+    <div class="panel-header">
+      <h2>⚙️ Düzenle</h2>
+      <span id="selected-label-info">Etiket seçili değil</span>
+    </div>
+
+    <!-- SEKMELER -->
+    <div class="tab-bar">
+      <button class="tab-btn active" onclick="switchTab('etiketler')">📋 Etiketler</button>
+      <button class="tab-btn" onclick="switchTab('sablonlar')">🗂️ Şablonlar</button>
+    </div>
+
+    <!-- ETİKETLER SEKMESİ -->
+    <div id="tab-etiketler" class="tab-content active">
+
+      <div class="global-section">
+        <h3>🌐 Tüm Etiketlere Uygula</h3>
+        <div class="form-row">
+          <label>Kurum Adı</label>
+          <input type="text" id="g-kurum" placeholder="Kurum / Şirket Adı">
+        </div>
+        <div class="form-row">
+          <label>Renk Teması</label>
+          <select id="g-tema">
+            <option value="">— Tema seç —</option>
+            <option value="theme-blue">🔵 Mavi</option>
+            <option value="theme-teal">🟢 Teal</option>
+            <option value="theme-purple">🟣 Mor</option>
+            <option value="theme-red">🔴 Kırmızı</option>
+            <option value="theme-orange">🟠 Turuncu</option>
+            <option value="theme-dark">⚫ Koyu</option>
+            <option value="theme-white">⚪ Beyaz</option>
+          </select>
+        </div>
+        <div class="form-row">
+          <label>Yazı Boyutu Ölçeği: <span id="g-font-deger">100%</span></label>
+          <input type="range" id="g-font" min="70" max="180" value="100" step="5"
+            oninput="document.getElementById('g-font-deger').textContent=this.value+'%'"
+            style="width:100%;cursor:pointer;">
+        </div>
+        <div class="form-row">
+          <label>✏️ Yazı Rengi (temayı geçersiz kılar)</label>
+          <div class="color-row">
+            <input type="color" id="g-yazi-rengi" value="#ffffff" oninput="document.getElementById('g-yazi-rengi-hex').value=this.value">
+            <input type="text" id="g-yazi-rengi-hex" value="" placeholder="Boş = temanın rengi" oninput="g_yaziRengiHexDegisti(this.value)">
+          </div>
+        </div>
+        <div class="form-row">
+          <label style="font-size:.75rem;font-weight:700;color:#1e40af;margin-bottom:6px;display:block;">📏 Satır Yükseklikleri (mm)</label>
+          <div style="display:flex;align-items:center;gap:5px;margin-bottom:5px;">
+            <span style="font-size:.72rem;color:#64748b;width:44px;flex-shrink:0;">Satır 1:</span>
+            <button onclick="srAdim(1,-0.05)" style="width:26px;height:26px;border:1.5px solid #e2e8f0;border-radius:6px;background:#f1f5f9;cursor:pointer;font-size:.9rem;font-weight:700;flex-shrink:0;">−</button>
+            <input type="text" id="sr-kutu-1" value="37.90"
+              style="width:56px;padding:4px 4px;border:1.5px solid #e2e8f0;border-radius:6px;font-size:.78rem;text-align:center;"
+              oninput="var v=parseFloat(this.value);if(!isNaN(v)&&v>30&&v<45){document.getElementById('sr-slider-1').value=v;satirGuncelle();}">
+            <button onclick="srAdim(1,0.05)" style="width:26px;height:26px;border:1.5px solid #e2e8f0;border-radius:6px;background:#f1f5f9;cursor:pointer;font-size:.9rem;font-weight:700;flex-shrink:0;">+</button>
+            <input type="range" id="sr-slider-1" min="35" max="41" value="37.9" step="0.05"
+              oninput="document.getElementById('sr-kutu-1').value=parseFloat(this.value).toFixed(2);satirGuncelle()"
+              style="flex:1;cursor:pointer;">
+          </div>
+          <div style="display:flex;align-items:center;gap:5px;margin-bottom:5px;">
+            <span style="font-size:.72rem;color:#64748b;width:44px;flex-shrink:0;">Satır 2:</span>
+            <button onclick="srAdim(2,-0.05)" style="width:26px;height:26px;border:1.5px solid #e2e8f0;border-radius:6px;background:#f1f5f9;cursor:pointer;font-size:.9rem;font-weight:700;flex-shrink:0;">−</button>
+            <input type="text" id="sr-kutu-2" value="37.90"
+              style="width:56px;padding:4px 4px;border:1.5px solid #e2e8f0;border-radius:6px;font-size:.78rem;text-align:center;"
+              oninput="var v=parseFloat(this.value);if(!isNaN(v)&&v>30&&v<45){document.getElementById('sr-slider-2').value=v;satirGuncelle();}">
+            <button onclick="srAdim(2,0.05)" style="width:26px;height:26px;border:1.5px solid #e2e8f0;border-radius:6px;background:#f1f5f9;cursor:pointer;font-size:.9rem;font-weight:700;flex-shrink:0;">+</button>
+            <input type="range" id="sr-slider-2" min="35" max="41" value="37.9" step="0.05"
+              oninput="document.getElementById('sr-kutu-2').value=parseFloat(this.value).toFixed(2);satirGuncelle()"
+              style="flex:1;cursor:pointer;">
+          </div>
+          <div style="display:flex;align-items:center;gap:5px;margin-bottom:5px;">
+            <span style="font-size:.72rem;color:#64748b;width:44px;flex-shrink:0;">Satır 3:</span>
+            <button onclick="srAdim(3,-0.05)" style="width:26px;height:26px;border:1.5px solid #e2e8f0;border-radius:6px;background:#f1f5f9;cursor:pointer;font-size:.9rem;font-weight:700;flex-shrink:0;">−</button>
+            <input type="text" id="sr-kutu-3" value="37.90"
+              style="width:56px;padding:4px 4px;border:1.5px solid #e2e8f0;border-radius:6px;font-size:.78rem;text-align:center;"
+              oninput="var v=parseFloat(this.value);if(!isNaN(v)&&v>30&&v<45){document.getElementById('sr-slider-3').value=v;satirGuncelle();}">
+            <button onclick="srAdim(3,0.05)" style="width:26px;height:26px;border:1.5px solid #e2e8f0;border-radius:6px;background:#f1f5f9;cursor:pointer;font-size:.9rem;font-weight:700;flex-shrink:0;">+</button>
+            <input type="range" id="sr-slider-3" min="35" max="41" value="37.9" step="0.05"
+              oninput="document.getElementById('sr-kutu-3').value=parseFloat(this.value).toFixed(2);satirGuncelle()"
+              style="flex:1;cursor:pointer;">
+          </div>
+          <div style="display:flex;align-items:center;gap:5px;margin-bottom:5px;">
+            <span style="font-size:.72rem;color:#64748b;width:44px;flex-shrink:0;">Satır 4:</span>
+            <button onclick="srAdim(4,-0.05)" style="width:26px;height:26px;border:1.5px solid #e2e8f0;border-radius:6px;background:#f1f5f9;cursor:pointer;font-size:.9rem;font-weight:700;flex-shrink:0;">−</button>
+            <input type="text" id="sr-kutu-4" value="37.90"
+              style="width:56px;padding:4px 4px;border:1.5px solid #e2e8f0;border-radius:6px;font-size:.78rem;text-align:center;"
+              oninput="var v=parseFloat(this.value);if(!isNaN(v)&&v>30&&v<45){document.getElementById('sr-slider-4').value=v;satirGuncelle();}">
+            <button onclick="srAdim(4,0.05)" style="width:26px;height:26px;border:1.5px solid #e2e8f0;border-radius:6px;background:#f1f5f9;cursor:pointer;font-size:.9rem;font-weight:700;flex-shrink:0;">+</button>
+            <input type="range" id="sr-slider-4" min="35" max="41" value="37.9" step="0.05"
+              oninput="document.getElementById('sr-kutu-4').value=parseFloat(this.value).toFixed(2);satirGuncelle()"
+              style="flex:1;cursor:pointer;">
+          </div>
+          <div style="display:flex;align-items:center;gap:5px;margin-bottom:5px;">
+            <span style="font-size:.72rem;color:#64748b;width:44px;flex-shrink:0;">Satır 5:</span>
+            <button onclick="srAdim(5,-0.05)" style="width:26px;height:26px;border:1.5px solid #e2e8f0;border-radius:6px;background:#f1f5f9;cursor:pointer;font-size:.9rem;font-weight:700;flex-shrink:0;">−</button>
+            <input type="text" id="sr-kutu-5" value="37.90"
+              style="width:56px;padding:4px 4px;border:1.5px solid #e2e8f0;border-radius:6px;font-size:.78rem;text-align:center;"
+              oninput="var v=parseFloat(this.value);if(!isNaN(v)&&v>30&&v<45){document.getElementById('sr-slider-5').value=v;satirGuncelle();}">
+            <button onclick="srAdim(5,0.05)" style="width:26px;height:26px;border:1.5px solid #e2e8f0;border-radius:6px;background:#f1f5f9;cursor:pointer;font-size:.9rem;font-weight:700;flex-shrink:0;">+</button>
+            <input type="range" id="sr-slider-5" min="35" max="41" value="37.9" step="0.05"
+              oninput="document.getElementById('sr-kutu-5').value=parseFloat(this.value).toFixed(2);satirGuncelle()"
+              style="flex:1;cursor:pointer;">
+          </div>
+          <div style="display:flex;align-items:center;gap:5px;margin-bottom:5px;">
+            <span style="font-size:.72rem;color:#64748b;width:44px;flex-shrink:0;">Satır 6:</span>
+            <button onclick="srAdim(6,-0.05)" style="width:26px;height:26px;border:1.5px solid #e2e8f0;border-radius:6px;background:#f1f5f9;cursor:pointer;font-size:.9rem;font-weight:700;flex-shrink:0;">−</button>
+            <input type="text" id="sr-kutu-6" value="37.90"
+              style="width:56px;padding:4px 4px;border:1.5px solid #e2e8f0;border-radius:6px;font-size:.78rem;text-align:center;"
+              oninput="var v=parseFloat(this.value);if(!isNaN(v)&&v>30&&v<45){document.getElementById('sr-slider-6').value=v;satirGuncelle();}">
+            <button onclick="srAdim(6,0.05)" style="width:26px;height:26px;border:1.5px solid #e2e8f0;border-radius:6px;background:#f1f5f9;cursor:pointer;font-size:.9rem;font-weight:700;flex-shrink:0;">+</button>
+            <input type="range" id="sr-slider-6" min="35" max="41" value="37.9" step="0.05"
+              oninput="document.getElementById('sr-kutu-6').value=parseFloat(this.value).toFixed(2);satirGuncelle()"
+              style="flex:1;cursor:pointer;">
+          </div>
+          <div style="display:flex;align-items:center;gap:5px;margin-bottom:5px;">
+            <span style="font-size:.72rem;color:#64748b;width:44px;flex-shrink:0;">Satır 7:</span>
+            <button onclick="srAdim(7,-0.05)" style="width:26px;height:26px;border:1.5px solid #e2e8f0;border-radius:6px;background:#f1f5f9;cursor:pointer;font-size:.9rem;font-weight:700;flex-shrink:0;">−</button>
+            <input type="text" id="sr-kutu-7" value="37.90"
+              style="width:56px;padding:4px 4px;border:1.5px solid #e2e8f0;border-radius:6px;font-size:.78rem;text-align:center;"
+              oninput="var v=parseFloat(this.value);if(!isNaN(v)&&v>30&&v<45){document.getElementById('sr-slider-7').value=v;satirGuncelle();}">
+            <button onclick="srAdim(7,0.05)" style="width:26px;height:26px;border:1.5px solid #e2e8f0;border-radius:6px;background:#f1f5f9;cursor:pointer;font-size:.9rem;font-weight:700;flex-shrink:0;">+</button>
+            <input type="range" id="sr-slider-7" min="35" max="41" value="37.9" step="0.05"
+              oninput="document.getElementById('sr-kutu-7').value=parseFloat(this.value).toFixed(2);satirGuncelle()"
+              style="flex:1;cursor:pointer;">
+          </div>
+        </div>
+        <button class="apply-global" onclick="applyGlobal()">✅ Tüm Etiketlere Uygula</button>
+      </div>
+
+      <div class="label-list">
+        <h3>📋 Etiket Listesi</h3>
+        <div id="label-form-list"></div>
+      </div>
+
+    </div>
+
+    <!-- ŞABLONLAR SEKMESİ -->
+    <div id="tab-sablonlar" class="tab-content">
+      <div class="sablon-panel">
+        <h3>🗂️ Şablon Yönetimi</h3>
+
+        <!-- Kaydet formu -->
+        <div class="sablon-kaydet-form">
+          <h4>💾 Mevcut Tasarımı Kaydet</h4>
+          <div class="form-row">
+            <label>Şablon Adı *</label>
+            <input type="text" id="s-ad" placeholder="ör. Konferans 2025">
+          </div>
+          <div class="form-row">
+            <label>Açıklama / Not</label>
+            <textarea id="s-aciklama" placeholder="İsteğe bağlı not..."></textarea>
+          </div>
+          <button class="sablon-kaydet-btn" onclick="sablonKaydet()">
+            💾 Şablon Olarak Kaydet
+          </button>
+        </div>
+
+        <!-- Kayıtlı şablonlar -->
+        <h3 style="margin-bottom:10px;">📂 Kayıtlı Şablonlar</h3>
+        <div id="sablon-liste">
+          <div class="sablon-liste-bos">Henüz kayıtlı şablon yok.</div>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+

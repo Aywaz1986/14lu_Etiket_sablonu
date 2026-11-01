@@ -1,0 +1,60 @@
+  @media print {
+    .header, .side-panel, .info-bar,
+    .page-control-bar, .sayfa-baslik,
+    .selected-indicator { display: none !important; }
+
+    .workspace   { display: block !important; }
+    .main-area   { display: block !important; padding: 0 !important; margin: 0 !important; }
+
+    /* Boş sayfa önlemi: sadece birden fazla sayfa varsa break uygula */
+    .sayfa-bloku {
+      display: block !important;
+      padding: 0 !important;
+      margin: 0 !important;
+      height: 276.1mm !important;
+      overflow: hidden !important;
+    }
+    .sayfa-bloku + .sayfa-bloku {
+      break-before: page;
+      page-break-before: always;
+    }
+
+    .sayfa-baslik { display: none !important; }
+
+    /* Tanex TW-2014 — Scale %150 ile Edge'de uyumlu, ekranla birebir */
+    .a4-sheet {
+      display: grid !important;
+      grid-template-columns: 99.1mm 99.1mm !important;
+      grid-template-rows: repeat(7, 38.1mm) !important;
+      column-gap: 1.27mm !important;
+      row-gap: 0 !important;
+      width: 210mm !important;
+      height: 276.1mm !important;
+      max-height: 276.1mm !important;
+      overflow: hidden !important;
+      padding: 4.7mm 3.5mm !important;
+      margin: 0 !important;
+      box-shadow: none !important;
+    }
+
+    .label-card {
+      transform: none !important;
+      box-shadow: none !important;
+    }
+    .label-card:hover { transform: none !important; }
+    [contenteditable] { outline: none !important; }
+
+    .label-kurum, .label-ad, .label-unvan {
+      color: #0f172a !important;
+      opacity: 1 !important;
+      -webkit-text-fill-color: #0f172a !important;
+    }
+    .label-card.renk-ozel .label-kurum,
+    .label-card.renk-ozel .label-ad,
+    .label-card.renk-ozel .label-unvan {
+      color: var(--yazi-rengi) !important;
+      -webkit-text-fill-color: var(--yazi-rengi) !important;
+    }
+    .label-accent-bar { opacity: .15 !important; }
+  }
+

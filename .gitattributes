@@ -1,0 +1,4 @@
+* text=auto eol=lf
+*.html text eol=lf
+dist/*.html -diff linguist-generated
+src/vendor/* linguist-vendored

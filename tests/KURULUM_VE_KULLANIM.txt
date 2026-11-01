@@ -1,0 +1,3 @@
+Kurulum: pip install playwright && playwright install chromium
+Çalıştır: python tests/calistir.py   (build + tüm testler)
+Yalnız testler: python tests/run_tests.py

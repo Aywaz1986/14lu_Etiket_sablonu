@@ -1,0 +1,30 @@
+  /* ── RENK TEMALARI ── */
+  .theme-blue .label-bg { background: linear-gradient(135deg, #1e40af 0%, #2563eb 60%, #3b82f6 100%); }
+  .theme-blue .label-accent-bar { background: #93c5fd; }
+  .theme-blue .label-kurum, .theme-blue .label-ad, .theme-blue .label-unvan { color: #fff; }
+
+  .theme-teal .label-bg { background: linear-gradient(135deg, #0f766e 0%, #0d9488 60%, #14b8a6 100%); }
+  .theme-teal .label-accent-bar { background: #99f6e4; }
+  .theme-teal .label-kurum, .theme-teal .label-ad, .theme-teal .label-unvan { color: #fff; }
+
+  .theme-purple .label-bg { background: linear-gradient(135deg, #6d28d9 0%, #7c3aed 60%, #8b5cf6 100%); }
+  .theme-purple .label-accent-bar { background: #ddd6fe; }
+  .theme-purple .label-kurum, .theme-purple .label-ad, .theme-purple .label-unvan { color: #fff; }
+
+  .theme-red .label-bg { background: linear-gradient(135deg, #b91c1c 0%, #dc2626 60%, #ef4444 100%); }
+  .theme-red .label-accent-bar { background: #fca5a5; }
+  .theme-red .label-kurum, .theme-red .label-ad, .theme-red .label-unvan { color: #fff; }
+
+  .theme-orange .label-bg { background: linear-gradient(135deg, #c2410c 0%, #ea580c 60%, #f97316 100%); }
+  .theme-orange .label-accent-bar { background: #fed7aa; }
+  .theme-orange .label-kurum, .theme-orange .label-ad, .theme-orange .label-unvan { color: #fff; }
+
+  .theme-dark .label-bg { background: linear-gradient(135deg, #0f172a 0%, #1e293b 60%, #334155 100%); }
+  .theme-dark .label-accent-bar { background: #2563eb; }
+  .theme-dark .label-kurum, .theme-dark .label-ad, .theme-dark .label-unvan { color: #f1f5f9; }
+
+  .theme-white .label-bg { background: #ffffff; border: 1.5px solid #e2e8f0; }
+  .theme-white .label-accent-bar { background: #2563eb; }
+  .theme-white .label-kurum { color: #2563eb; }
+  .theme-white .label-ad { color: #1e293b; }
+  .theme-white .label-unvan { color: #64748b; }

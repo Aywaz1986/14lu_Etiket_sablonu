@@ -1,0 +1,65 @@
+  /* ── ETİKET ── */
+  .label-card {
+    position: relative;
+    border-radius: 2px;
+    overflow: hidden;
+    cursor: pointer;
+    transition: box-shadow .15s, transform .1s;
+    width: 99.1mm;
+    height: 38.1mm;
+    display: flex;
+    flex-direction: column;
+  }
+  .label-card:hover { box-shadow: 0 0 0 2px var(--accent); transform: scale(1.005); }
+  .label-card.selected { box-shadow: 0 0 0 2.5px var(--accent); }
+
+  .label-bg { position: absolute; inset: 0; z-index: 0; }
+  .label-content {
+    position: relative; z-index: 1;
+    padding: 5mm 6mm;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+    gap: 1.5mm;
+  }
+
+  .label-kurum {
+    font-size: calc(7pt * var(--font-olcek, 1));
+    font-weight: 700;
+    letter-spacing: .08em; text-transform: uppercase;
+    opacity: .75; outline: none; min-width: 10px;
+  }
+  .label-ad {
+    font-family: 'Sora', sans-serif;
+    font-size: calc(11pt * var(--font-olcek, 1));
+    font-weight: 700;
+    line-height: 1.2; outline: none; min-width: 10px;
+  }
+  .label-unvan {
+    font-size: calc(7.5pt * var(--font-olcek, 1));
+    font-weight: 500;
+    opacity: .8; outline: none; min-width: 10px;
+  }
+  /* Manuel yazı rengi seçilmişse temanın rengini ezer */
+  .label-card.renk-ozel .label-kurum,
+  .label-card.renk-ozel .label-ad,
+  .label-card.renk-ozel .label-unvan {
+    color: var(--yazi-rengi) !important;
+  }
+
+  .label-accent-bar {
+    position: absolute;
+    left: 0; top: 0; bottom: 0;
+    width: 5mm; z-index: 2;
+  }
+
+  .selected-indicator {
+    position: absolute; top: 3px; right: 3px;
+    width: 16px; height: 16px; border-radius: 50%;
+    background: var(--accent); color: #fff;
+    font-size: 9px; display: none;
+    align-items: center; justify-content: center; z-index: 10;
+  }
+  .label-card.selected .selected-indicator { display: flex; }
+
